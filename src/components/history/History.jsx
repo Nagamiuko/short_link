@@ -22,7 +22,7 @@ const History = ({ dataitem }) => {
                   {moment(item?.createdAt).format("h:mm A")}
                 </div>
 
-                <div className="date-link"><a href={item?.original_link} target="_blank">{item?.full_link}</a></div>
+                <div className="date-link"><a href={item?.original_link} target="_blank">{item?.original_link}</a></div>
                 <div className="date-link"><a href={item?.short_link} target="_blank" >{item?.short_link}</a></div>
               </div>
             ))}
