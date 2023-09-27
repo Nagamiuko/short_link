@@ -2,8 +2,7 @@ import React from "react";
 import "./story.css";
 import moment from "moment-timezone";
 const History = ({ dataitem , view}) => {
-  console.log(dataitem);
-
+   
   return (
     <>
       <div className="box-container-list">

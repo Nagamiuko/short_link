@@ -16,8 +16,9 @@ const HistoryPage = () => {
       setDataView(history)
       setData(datahistory)
     }, [datahistory,history]);
+    
   const view_page = dataview && dataview.reduce((acc,item) => acc+item.view_page,0) 
-  console.log(view_page);
+
   return (
     <div>
         <header>

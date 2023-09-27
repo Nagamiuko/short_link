@@ -12,8 +12,6 @@ const Content = ({View}) => {
   const [error, setError] = useState(false);
   const [input, setInput] = useState("");
   const [count, setCount] = useState(0);
- 
-  console.log(View);
 
   const ShortLink = async () => {
     try {
@@ -51,13 +49,11 @@ const Content = ({View}) => {
     }
   }, [input]);
 
-  console.log(count);
   const saveHistoryLink = async (e) => {
     let Data = {
       full_link: input,
       short_link: link,
     };
-    console.log(Data.view_page);
     try {
       if (Data.full_link === "" || Data.short_link === "") {
         alert("ไม่มีข้อมูล โปรดลองอีกครั้ง");
