@@ -63,17 +63,11 @@ const Content = () => {
   };
   const saveHistoryCilck = async (e) => {
     let Data = {
-      view_page: count,
-      count_click_copy: countcopy,
-      count_click_qr:countqr
+      count_click_copy: e,
     };
-    console.log(Data.view_page);
+    console.log(e);
     try {
-      if (Data.full_link === "" || Data.short_link === "") {
-        // alert("ไม่มีข้อมูล โปรดลองอีกครั้ง");
-      } else {
-        await axios.post(`${serverAPI}/api/add-view-history`, Data);
-      }
+        // await axios.post(`${serverAPI}/api/add-view-history`, Data);
     } catch (err) {
       console.log(err);
     }
@@ -110,7 +104,7 @@ const Content = () => {
                   className="copy-link-short mt-2"
                   onClick={() => saveHistoryLink(1)}
                 >
-                  <a target="_back_url" href={link}>
+                  <a target="_back_url" href={link} onClick={()=> saveHistoryCilck(+1)}>
                     {link}
                   </a>
                 </div>
