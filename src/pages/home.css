@@ -1,0 +1,16 @@
+.container{
+   max-width: 1320px;
+   min-height: 900px;
+   margin: 0 auto;
+}
+header{
+   padding: 0;
+   width: 100%;
+   position: fixed;
+   left: 0;
+   z-index: 99;
+   top: 0;
+}
+section{
+   width: 100%;
+}

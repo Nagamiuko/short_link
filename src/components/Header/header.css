@@ -1,0 +1,31 @@
+@import "../../App.css";
+.box-bd-wh{
+   position: relative;
+   width: 99%;
+   height: 70px;
+   background-color:var(--color-bg-navbar);
+   backdrop-filter: blur(5px);
+   border-radius: 10px;
+   margin-left: 9px;
+   top: 1rem;
+}
+.nav-menu{
+   padding: 22px;
+   display: flex;
+   justify-content: space-between;
+   align-items: center;
+}
+.nav-menu .item{
+    font-size: 20px;   
+    font-weight: 700;
+    color: var(--color-font);
+    display: flex;
+    align-items: center;
+}
+.nav-menu .onclick{
+    cursor: pointer;
+    transition: 0.3s;
+}
+.onclick:hover{
+   color: #000000;
+}

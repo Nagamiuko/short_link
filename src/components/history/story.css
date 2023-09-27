@@ -1,0 +1,40 @@
+.box-container-list{
+   position: relative;
+   display: flex;
+   justify-content: center;
+   width: 100%;
+   margin-top: 10rem;
+   background-color: #dddd;
+   border-radius: 10px;
+}
+.box-content{
+   padding: 20px;
+   width: 100%;
+}
+.border-mb{
+   width: 100%;
+   border: 1px solid #636363dd;
+}
+.title-list{
+   margin-bottom: 10px;
+}
+.mb-2{
+   margin-bottom: -20px;
+}
+.item-history{
+   position: relative;
+   top: 10px;
+   padding: 10px 0;
+   width: 100%;
+   height: 40px;
+   display: flex;
+   flex-direction: row;
+   align-items: center;
+}
+
+.item-history .time-date{
+   flex: 0.5;
+}
+.item-history .date-link{
+   flex: 1;
+}
