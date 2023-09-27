@@ -15,7 +15,7 @@ const HomePage = () => {
         <section>
             <div className="container">
                 <div className="content">
-                    <Content/>
+                    <Content View={count}/>
                 </div>
             </div>
         </section>

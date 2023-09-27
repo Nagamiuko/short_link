@@ -8,12 +8,12 @@ export const getHistory = () => async (dispatch) => {
     });
 
     const { data } = await axios.get(
-      `${serverAPI}/api/get-history`
+      `${serverAPI}/api/get-view-history`
     );
 
     dispatch({
       type: "getHistoryAllSuccess",
-      payload: data.datahistory,
+      payload: data.viewhistory,
     });
   } catch (error) {
     dispatch({

@@ -1,13 +1,17 @@
 import React from "react";
 import "./story.css";
 import moment from "moment-timezone";
-const History = ({ dataitem }) => {
+const History = ({ dataitem , view}) => {
   console.log(dataitem);
+
   return (
     <>
       <div className="box-container-list">
         <div className="box-content">
-          <div className="title-list">Short Link History</div>
+          <div className="title-list">
+             <div className="title-text">Short Link History</div>
+             <div className="title-view-count">Number Visitor : {view}</div>
+          </div>
           <div className="border-mb"></div>
           <div className="item-history mb-2">
             <div className="time-date">Time</div>

@@ -4,7 +4,7 @@ import { CopyToClipboard } from "react-copy-to-clipboard";
 import axios from "axios";
 import QRCode from "react-qr-code";
 import { serverAPI } from "../../server";
-const Content = () => {
+const Content = ({View}) => {
   const [link, setLink] = useState("");
   const [qrcode, setQR] = useState("");
   const [copy, setCopy] = useState(false);
@@ -12,11 +12,9 @@ const Content = () => {
   const [error, setError] = useState(false);
   const [input, setInput] = useState("");
   const [count, setCount] = useState(0);
-  const [countcopy, setCountCopy] = useState(0);
-  const [countqr, setCountQR] = useState(0);
  
-  console.log(countcopy);
-  console.log(countqr);
+  console.log(View);
+
   const ShortLink = async () => {
     try {
       setLoading(true);
@@ -34,8 +32,20 @@ const Content = () => {
       setLoading(false);
     }
   };
+  const saveHistoryCilck = async (e) => {
+    let Data = {
+      view_page:e ,
+    };
+    console.log(e);
+    try {
+        await axios.post(`${serverAPI}/api/add-view-history`, Data);
+    } catch (err) {
+      console.log(err);
+    }
+  };
+  
   useEffect(() => {
-    setCount(count + 1)
+    saveHistoryCilck(+1)
     if (input.length) {
       ShortLink();
     }
@@ -58,20 +68,11 @@ const Content = () => {
       console.log(err);
     }
   };
+
   const generaQR = (e) => {
     setQR(e);
   };
-  const saveHistoryCilck = async (e) => {
-    let Data = {
-      count_click_copy: e,
-    };
-    console.log(e);
-    try {
-        // await axios.post(`${serverAPI}/api/add-view-history`, Data);
-    } catch (err) {
-      console.log(err);
-    }
-  };
+
   return (
     <>
       <div className="box-container">
@@ -95,21 +96,21 @@ const Content = () => {
               <div>
                 <CopyToClipboard text={link} onCopy={() => setCopy(true)}>
                   <div className={copy ? "nocopy" : "copy-link-short"}>
-                    <button onClick={() => saveHistoryLink(1) || setCountCopy(1) }>
+                    <button onClick={() => saveHistoryLink() }>
                       Copy Link
                     </button>
                   </div>
                 </CopyToClipboard>
                 <div
                   className="copy-link-short mt-2"
-                  onClick={() => saveHistoryLink(1)}
+                  onClick={() => saveHistoryLink()}
                 >
-                  <a target="_back_url" href={link} onClick={()=> saveHistoryCilck(+1)}>
+                  <a target="_back_url" href={link} onClick={()=> saveHistoryCilck()}>
                     {link}
                   </a>
                 </div>
                 <div className={"copy-link-short"}>
-                  <button onClick={() => generaQR(link) || saveHistoryLink(1) || setCountQR(1)}>
+                  <button onClick={() => generaQR(link) || saveHistoryLink()}>
                     QR Code Generator
                   </button>
                 </div>
