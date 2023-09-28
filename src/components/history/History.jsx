@@ -22,7 +22,7 @@ const History = ({ dataitem , view}) => {
             dataitem.map((item, keys) => (
               <div className="item-history" key={keys}>
                 <div className="time-date">
-                  {moment(item?.createdAt).format("h:mm A")}
+                  {moment(item?.createdAt).format("YYYY / MMM / DD , h:mm A")}
                 </div>
 
                 <div className="date-link w-h"><a href={item?.original_link} target="_blank">{item?.original_link}</a></div>
