@@ -40,3 +40,9 @@
 .item-history .date-link{
    flex: 1;
 }
+.item-history .w-h{
+   text-overflow: ellipsis;
+   overflow: hidden;
+   white-space:nowap;
+   margin-right: 2rem;
+}
