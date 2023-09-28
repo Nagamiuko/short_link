@@ -35,3 +35,6 @@ link : [https://github.com/Nagamiuko/short_link.git](https://github.com/Nagamiuk
 สามารถดู demo ได้ที่ linK : [https://short-link-wheat.vercel.app/](https://short-link-wheat.vercel.app/)\
 ถ้าคุณสนใจที่จะนำโปรเจคนี้ไปพัฒนาต่อ สามารถดาวน์โหลดได้ที่ GitHup ของผมได้เลย 
 
+กรณีต้องการแก้ไขการเชื่อต่อ `server api ` สามารถแก้ไขได้ที่ `folder src ` ชื่อไฟล์ `server.js` ครับผม \
+สามารถเปลี่ยน url ของ api ได้เลยครับ
+
